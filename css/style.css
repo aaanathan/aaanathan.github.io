@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *
 * ======================================================= */
 body {
@@ -1291,3 +1291,19 @@ input[type="text"] {
 }
 
 /*# sourceMappingURL=style.css.map */
+.menu_item
+{
+    height: 20px;
+    min-width: 50px;
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: #282828;
+    color: #FFFFFF;
+}
+.menu_item:hover
+{
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #474646;
+    color: #FFFFFF;
+}
