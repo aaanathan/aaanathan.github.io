@@ -1293,6 +1293,11 @@ input[type="text"] {
 /*# sourceMappingURL=style.css.map */
 .menu_item
 {
+    margin: 0px;
+    padding: 5px;
+    display: block;
+    border: 1px solid;
+    border-radius: 5px;
     height: 20px;
     min-width: 50px;
     font-weight: bold;
@@ -1302,6 +1307,11 @@ input[type="text"] {
 }
 .menu_item:hover
 {
+    margin: 0px;
+    padding: 5px;
+    display: block;
+    border: 1px solid;
+    border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
     background-color: #474646;
