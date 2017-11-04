@@ -1293,27 +1293,37 @@ input[type="text"] {
 /*# sourceMappingURL=style.css.map */
 .menu_item
 {
-    margin: 0px;
-    padding: 5px;
-    display: block;
+    margin: 15px;
+    padding: 15px;
+    width: 150px;
+    display:inline-block;
+    float: left
     border: 1px solid;
-    border-radius: 5px;
-    height: 20px;
-    min-width: 50px;
+    border-radius: 100px;
+    min-height: 50px;
     font-weight: bold;
-    text-decoration: underline;
     background-color: #282828;
     color: #FFFFFF;
 }
 .menu_item:hover
 {
-    margin: 0px;
-    padding: 5px;
-    display: block;
-    border: 1px solid;
-    border-radius: 5px;
-    text-decoration: none;
     cursor: pointer;
     background-color: #474646;
     color: #FFFFFF;
+}
+
+.read_more_menu
+{
+    margin: 5px;
+    padding: 15px;
+    width: 100%;
+    display:inline-block;
+    float: right
+    border: 1px solid;
+    border-radius: 100px;
+    min-height: 50px;
+    font-weight: bold;
+    background-color: #282828;
+    color: #FFFFFF;
+    text-align: center;
 }
