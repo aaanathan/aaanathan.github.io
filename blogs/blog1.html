@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Arockia &mdash; Learning Never Ends</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Personal Blog of Arockia" />
+	<meta name="keywords" content="blog arockia aaa_nathan python iot android" />
+
+	<!--
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by FreeHTML5.co
+
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="../css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="../js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	</head>
+	<body>
+
+  <div class="fh5co-loader"></div>
+	<div>
+    <div id="fh5co-blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="../images/logo.png" style="float:left;">
+          </div>
+          <div class="col-md-6">
+            <a href='../blog.html' style="float:right; text-align:center;" class="menu_item">Blog</a>
+            <a href='../index.html' style="float:right; text-align:center;" class="menu_item">Home</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="fh5co-blog animate-box">
+              <div class="blog-text">
+                <span class="posted_on">Mar. 15th 2016</span>
+                <h3><a href="../blogs/blog1.html">Download mp3 from a website automatically using Python</a></h3>
+                <p>
+                  Hi Friends,
+
+Today I have some other simple and useful script. Couple of days back my brother asked me to download Christian songs. And I went to Google for help and got a link which has the Christian songs in form of YouTube videos. Yeah cool. But I need those as mp3 format. I just thought to use Python for this task since I am so lazy to sit for copy paste and download using fastest YouTube video download plug-in.
+
+So, what I finally did was the below script in Python.
+
+Code:
+                <pre>
+                  <code class="python">
+import requests
+from BeautifulSoup import BeautifulSoup as bs
+import os
+
+url = "http://www.yourlivingmanna.com/tamil_songs.asp"
+
+resp = requests.get(url)
+
+soup = bs(resp.text)
+
+links = soup.findAll('a')
+video_links = []
+for l in links:
+    if "&video=" in l['href']:
+        ln = l['href']
+        print ln
+        video_links.append(ln.split("&video=")[1])
+
+for v in video_links:
+    os.system("youtube-dl -x --audio-format mp3 --prefer-ffmpeg  "+v)
+                  </code>
+                </pre>
+                  What it will do? Script will fetch the response of the website and find all the href links in the website and at the same time the href value should have “&video=”. That’s just a embedded video link. After collecting all the links I just stripped off all the chunk in the url and got only YouTube links. I have installed youtube-dl which has the ability to download and convert the YouTube videos into mp3. Just triggered the os.system() method with the youtube-dl command to get my job done. That’s it. Python made my job easy..</br></br>
+                  See you in the next post with some other script… Take care folks…
+                </p>
+                <ul class="stuff">
+                  <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="../js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="../js/jquery.stellar.min.js"></script>
+	<!-- Easy PieChart -->
+	<script src="../js/jquery.easypiechart.min.js"></script>
+	<!-- Main -->
+	<script src="../js/main.js"></script>
+
+	</body>
+</html>
